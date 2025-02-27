@@ -1,5 +1,7 @@
 export function getAdjectives() {
     return JSON.stringify(
+
+
         [{
             "word": "nice",
             "score": 6.4,
