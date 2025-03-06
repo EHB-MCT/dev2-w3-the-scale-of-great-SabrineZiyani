@@ -114,15 +114,27 @@ function render() {
 
 function upVote(target) {
     console.log("Upvote", target.value);
-    updateScore(target.value, 0.1);
-    render();
-}
 
+    fetch('https://dev2-prima.onrender.com/upvote/${target.value}')
+        .then(function () {
+            console.log('upvote klaar');
+            init();
+
+            //render();
+        })
+
+}
 
 function downVote(target) {
     console.log("Downvote", target.value);
-    updateScore(target.value, -0.1);
-    render();
+    fetch('https://dev2-prima.onrender.com/downvote/${ target.value }')
+        .then(function () {
+            console.log('downvote klaar');
+            init();
+
+            //render();
+        })
+
 }
 
 function updateScore(word, scoreChange) {
